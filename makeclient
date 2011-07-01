@@ -1,0 +1,27 @@
+CC=g++
+CFLAGS=-Wall -g
+UNAME := $(shell uname)
+ifeq ($(UNAME), SunOS)
+	LIBS=-lsocket -lnsl -lpthread -lrt
+else
+	LIBS=-lpthread
+endif
+FLIBS=
+PROGNAME=hey_client
+
+HFILES = client.h process.h
+
+CCFILES = client.cpp process.cpp
+
+OFILES = $(CCFILES:.cpp=.o)
+
+all: link
+
+.cc.o:	 $(CCFILES) $(HFILES)
+	$(CC) $(CFLAGS) -c $*.cpp
+
+link:	$(OFILES)
+	$(CC) $(CFLAGS) $(LIBS)  -o $(PROGNAME) $(OFILES) $(FLIBS)
+clean:
+	rm -f *.o *.*~
+

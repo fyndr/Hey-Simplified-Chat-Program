@@ -1,0 +1,32 @@
+Hey Simplified Chat Program
+a simple chat client and server for academic or informal use
+
+1. Program Description:
+
+This program is meant to provide a simple - indeed rudimentary - interface for chat communications that can be studied, dissected, and otherwise modified by users interested in socket communication following a client-server model. The user interface for the client and the server have been stripped for efficiency and to better emphasize the underlying socket-relevant code.
+
+2. How to Run the Server:
+
+The chat server allows for multiple clients to connect and communicate. To build the server from source, run the following command at the terminal:
+
+make -f makeserver
+
+This produces the hey_server executable. The program must be run in the following format:
+
+hey_server 1234 
+
+Where the second argument is the port number on which the server is accepting incoming client requests.
+
+3. How to Run the Client:
+
+The chat client can be built with the following command:
+
+make -f makeclient
+
+This produces the hey_client executable. The program must be run in the following format:
+
+hey_client 127.0.0.1 1234 nickname
+
+Where the second argument is the IP address or host name of the server, the third argument is the port number on which the server is accepting incoming client requests, and the fourth argument is the client's nickname.
+
+Use of the chat programs beyond initial setup is left as an exercise in discovery for the user. Additional details may be found in the requirements specification included in this repository.

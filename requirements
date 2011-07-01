@@ -1,0 +1,17 @@
+Requirements for Simplified Chat Model, "Hey"
+
+-the system shall allow for chat communications among multiple parties
+-the system shall consist of a UI (client) connecting to a centralized messaging center, or "room" (server)
+-the client shall allow the user to specify a host IP and port number to connect to initially
+-the client shall, upon connection, allow the user to input short strings to be displayed in the chat window
+-the server shall continuously accept connections from clients
+-the server shall support up to 24 clients
+-the client shall have a character limit of 1024 characters per message
+-the server shall send messages to all clients upon receipt
+-the client shall send all messages directly to the server
+-the server shall receive a message when a user connects or disconnects
+-the client shall prompt the user for a nickname
+-the client shall append its nickname to the front of each message
+-the client shall permit nicknames between 1 and 24 characters in length
+-the user shall be unable to input a message that will cause either the server or the other clients to function incorrectly
+-the client shall communicate with the server via TCP sockets
